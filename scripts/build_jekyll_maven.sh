@@ -1,9 +1,12 @@
 #!/bin/bash
 # Exit immediately if a simple command exits with a non-zero status.
 set -e
+set -x
 JEKYLL_BUILD_FLAGS=""
 CONTENT_DIR="src/main/content"
 TARGET_DIR="target"
+
+JEKYLL_DRAFT_GUIDES=true
 
 echo "Ruby version:"
 ruby -v
