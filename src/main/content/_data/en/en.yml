@@ -27,6 +27,7 @@ _includes:
     keep-exploring: Keep exploring
     with-these-guides: with these guides.
     interactive: Interactive
+    back-to-guides: Back to guides
   footer:
     open-source: an IBM open source project
     copyright: Copyright IBM Corp. 2019
@@ -104,6 +105,10 @@ contribute:
     intro-title: Raising Issues
     intro-text: Please raise any bug reports on the Kabanero project repository's GitHub issue tracker. Be sure to search the list to see if your issue has already been raised. A good bug report is one that make it easy for everyone to understand what you were trying to do and what went wrong. Provide as much context as possible so we can try to recreate the issue.
     open-issues:  Open issues for new features
+  badge:
+    title: Earning the Badge
+    text: Contribute to the Kabanero Open Source communities and earn a badge! With this badge, you earn a right to brag in front of your colleagues and friends! You can also show this badge to anyone and prove that you have been recognized by your contribution to the open source Kabanero project.
+    acclaim: View Badge in Acclaim
   connect:
     intro-text: Have your own flavors to add to Kabanero?  Come see what the community is cooking up!
     community: Connect with your community
@@ -184,10 +189,11 @@ docs:
   general-reference: General Reference
   contribute: Contribute
 
-general-reference:
+doc:
   page-header: Kabanero Docs
   welcome-to-docs: Welcome to Docs
   no-doc-found: No doc found
+  latest: Latest
 
 guides:
   page-title: Guides
@@ -320,7 +326,9 @@ install:
 
 operations:
   intro-title: Kabanero Foundation Installation
-  intro-text: Kabanero is built on foundational open technologies that install onto a Kubernetes cluster. Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a set of curated collections, which this install will activate a default set of featured collections.
+  intro-text: Kabanero is built on foundational open technologies that install onto a Kubernetes cluster. Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a set of curated collections, which this install will activate a default set of featured collections. The optional 
+  intro-text-kappnav-link: Kubernetes Application Navigator 
+  intro-text-cont: technology provides application visibility and enables day 2 operations.
   install-button: Install Kabanero Foundation
   footer-text: Kabanero Foundation includes an operator-based installation to leverage all the benefits of Kubernetes
 

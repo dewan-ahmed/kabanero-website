@@ -133,22 +133,7 @@ a {
     padding-bottom: 183px;
 }
 
-#header_twitter_img {
-    height: 25px;
-    margin: 6px 25px 0 0;
-}
-
-#header_slack_img {
-    height: 25px;
-    margin: 6px 25px 0 0;
-}
-
 #footer_slack_img{
-    height: 25px;
-    margin: 6px 25px 0 0;
-}
-
-#header_stackoverflow_img {
     height: 25px;
     margin: 6px 25px 0 0;
 }
@@ -197,6 +182,12 @@ a {
     margin-bottom: 0px;
 }
 
+.modal-content{
+    h1, h2{
+        color:#000000cc
+    }
+}
+
 .modal-title{
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
     font-size: 35px;
@@ -208,16 +199,11 @@ a {
 
 .whats-new-modal{
     max-width: 850px;
-    margin-top: 15%;
 }
+
 #share_blog_twitter_img{
     height: 30px;
     margin: 0 15px 0 0;
-}
-
-#header_github_img{
-    height: 25px;
-    margin: 6px 25px 0 0;
 }
 
 #header_stackoverflow_link {
@@ -319,4 +305,13 @@ a {
 .dropdown-item:active, .dropdown-item:hover{
     color: #ffffff;
     background-color: #C43804;
+}
+
+.header-icon {
+    height: 25px;
+    margin: 6px 25px 0 0;
+}
+
+#whats-new-modal-svg-icon{
+    cursor: pointer;
 }
