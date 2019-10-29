@@ -46,7 +46,7 @@ repos.each do |element|
         ##################
         # DRAFT GUIDES  
         # Clone guides that are still being drafted and are only for the staging website
-        if repo_name.start_with?('draft-iguide') || repo_name.start_with?('draft-guide')
+        if repo_name.start_with?('draft-iguide') || repo_name.start_with?('draft-guide-dev-getting-started')
             # Clone the draft guides, using the dev branch for travis and master for all other environments.
             `git clone https://github.com/kabanero-io/#{repo_name}.git -b #{guide_branch} src/main/content/guides/#{repo_name}`
 
