@@ -24,6 +24,8 @@ mkdir guides-tmp guides && cd guides-tmp
 git clone "${GUIDES_GIT_URL}" --branch "${GUIDES_GIT_REVISION}" .
 mv publish/* ../guides
 
+echo "Draft guides: $JEKYLL_DRAFT_GUIDES"
+
 if [ "$JEKYLL_DRAFT_GUIDES" == "true" ]; then
     mv draft/* ../guides
 fi
