@@ -16,6 +16,7 @@ docker run -it \
           -e BLOGS_GIT_URL=${BLOGS_GIT_URL} \
           -e GUIDES_GIT_URL=${GUIDES_GIT_URL} \
           -e GUIDES_GIT_REVISION=${GUIDES_GIT_REVISION} \
+          -e JEKYLL_DRAFT_GUIDES=${JEKYLL_DRAFT_GUIDES} \
           -e JEKYLL_ENV=${JEKYLL_ENV} \
           -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*} \
           -e TRAVIS_EVENT_TYPE=${TRAVIS_EVENT_TYPE} \
