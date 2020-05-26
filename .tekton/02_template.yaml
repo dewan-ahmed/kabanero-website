@@ -16,7 +16,7 @@ spec:
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
     metadata:
-      name: $(params.git-repo-name)-git-repo-$(uid)
+      name: $(params.git-repo-name)-kabanero-website-repo-$(uid)
     spec:
       type: git
       params:
@@ -28,7 +28,7 @@ spec:
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
     metadata:
-      name: $(params.git-repo-name)-image-$(uid)
+      name: $(params.git-repo-name)-kabanero-website-image-$(uid)
     spec:
       type: image
       params:
@@ -38,22 +38,31 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      name: build-deploy-$(params.git-repo-name)-$(uid)
+      name: build-and-deploy-kabanero-website-pipelinerun
     spec:
-      serviceAccountName: pipeline
       pipelineRef:
-        name: build-and-deploy-kabanero-website
+        name: build-and-deploy-kabanero-website-$(params.git-repo-name)-$(uid)
       resources:
       - name: git-repo
         resourceRef:
-          name: $(params.git-repo-name)-git-repo-$(uid)
+          name: $(params.git-repo-name)-kabanero-website-repo-$(uid)
       - name: target-image
         resourceRef:
-          name: $(params.git-repo-name)-image-$(uid)
+          name: $(params.git-repo-name)-kabanero-website-image-$(uid)
       params:
       - name: app_name_prefix
         value: $(params.git-repo-name)
+      - name: ibm_cloud_organization
+        value: dnastaci@us.ibm.com
+      - name: ibm_cloud_space
+        value: dev
+      - name: ibm_cloud_api
+        value: https://cloud.ibm.com
       - name: ibm_cloud_api_key
         value: $(params.IBM_CLOUD_API_KEY)
+      - name: docs_git_url
+        value: https://github.com/kabanero-io/docs.git
+      - name: guides_git_url
+        value: https://github.com/nastacio/guides.git
       - name: github_token
         value: $(params.GITHUB_PAT)
