@@ -13,7 +13,7 @@ spec:
       type: string
       default: "./scripts/build_jekyll_maven.sh"
   steps:
-    - name: publish
+    - name: execute
       image: $(inputs.resources.image.url)
       workingDir: /
       script: |

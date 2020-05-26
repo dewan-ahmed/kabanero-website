@@ -20,10 +20,9 @@ spec:
     description: URL for IBM Cloud account
     type: string
     default: "https://cloud.ibm.com"
-  - name: ibm_cloud_api_key_secret
-    description: K8s secret name for API key for IBM Cloud account
+  - name: ibm_cloud_api_key
+    description: API key for IBM Cloud account
     type: string
-    default: ibmcloud-api-key-kabanero-website
   - name: docs_git_url
     description: Source URL for docs inside website
     type: string
@@ -32,10 +31,9 @@ spec:
     description: Source URL for guides inside website
     type: string
     default: "https://github.com/kabanero-io/guides.git"
-  - name: github_token_secret
+  - name: github_token
     description: K8s secret name for Git Personal Access Token
     type: string
-    default: git-pat-kabanero-website
   - name: app_name_prefix
     description: Application name prefix for the CF app
     type: string
@@ -108,14 +106,14 @@ spec:
       value: $(params.ibm_cloud_space)
     - name: ibm_cloud_api
       value: $(params.ibm_cloud_api)
-    - name: ibm_cloud_api_key_secret
-      value: $(params.ibm_cloud_api_key_secret)
+    - name: ibm_cloud_api_key
+      value: $(params.ibm_cloud_api_key)
     - name: docs_git_url
       value: $(params.docs_git_url)
     - name: guides_git_url
       value: $(params.guides_git_url)
-    - name: github_token_secret
-      value: $(params.github_token_secret)
+    - name: github_token
+      value: $(params.github_token)
     - name: app_name_prefix
       value: $(params.app_name_prefix)
     runAfter:

@@ -19,10 +19,9 @@ spec:
       description: URL for IBM Cloud account
       type: string
       default: "https://cloud.ibm.com"
-    - name: ibm_cloud_api_key_secret
+    - name: ibmcloud_api_key
       description: API key for IBM Cloud account
       type: string
-      default: ibmcloud-api-key-kabanero-website 
     - name: docs_git_url
       description: Source URL for docs inside website
       type: string
@@ -31,10 +30,9 @@ spec:
       description: Source URL for guides inside website
       type: string
       default: "https://github.com/kabanero-io/guides.git"
-    - name: github_token_secret
+    - name: github_token
       type: string
-      description: name of the secret holding the Git Personal Access Token
-      default: git-pat-kabanero-website
+      description: Git Personal Access Token
     - name: app_name_prefix
       description: Application name prefix for the CF app
       type: string
@@ -58,12 +56,13 @@ spec:
         cd /
         export IBM_CLOUD_ORGANIZATION=$(inputs.params.ibm_cloud_organization)
         export IBM_CLOUD_SPACE=$(inputs.params.ibm_cloud_space)
-        # export IBM_CLOUD_API_KEY=$(inputs.params.ibm_cloud_api_key)
+        export IBM_CLOUD_API_KEY=$(inputs.params.ibm_cloud_api_key)
         export IBM_CLOUD_API=$(inputs.params.ibm_cloud_api)
         export DOCS_GIT_URL=$(inputs.params.docs_git_url)
         export GUIDES_GIT_URL=$(inputs.params.guides_git_url)
         export JEKYLL_DRAFT_GUIDES=true
         export TRAVIS_REPO_SLUG=$(inputs.params.app_name_prefix)
+        export PAT==$(inputs.params.github_token)
         ./travis/travis_ibmcloud_cf_push.sh
       securityContext:
         runAsUser: 0
