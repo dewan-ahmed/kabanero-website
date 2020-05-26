@@ -19,7 +19,7 @@ spec:
       description: URL for IBM Cloud account
       type: string
       default: "https://cloud.ibm.com"
-    - name: ibmcloud_api_key
+    - name: ibm_cloud_api_key
       description: API key for IBM Cloud account
       type: string
     - name: docs_git_url
@@ -45,7 +45,7 @@ spec:
         cd /
         export IBM_CLOUD_ORGANIZATION=$(inputs.params.ibm_cloud_organization)
         export IBM_CLOUD_SPACE=$(inputs.params.ibm_cloud_space)
-        export IBM_CLOUD_API_KEY=$(inputs.params.ibmcloud_api_key)
+        export IBM_CLOUD_API_KEY=$(inputs.params.ibm_cloud_api_key)
         export IBM_CLOUD_API=$(inputs.params.ibm_cloud_api)
         export DOCS_GIT_URL=$(inputs.params.docs_git_url)
         export GUIDES_GIT_URL=$(inputs.params.guides_git_url)
