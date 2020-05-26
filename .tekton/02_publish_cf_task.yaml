@@ -38,17 +38,6 @@ spec:
       type: string
   steps:
     - name: publish
-      env:
-      - name: PAT
-        valueFrom:
-          secretKeyRef:
-            name: $(params.github_token_secret)
-            key: github_pat
-      - name: IBM_CLOUD_API_KEY
-        valueFrom:
-          secretKeyRef:
-            name: $(params.ibm_cloud_api_key_secret)
-            key: ibmcloud_api_key
       image: $(inputs.resources.image.url)
       workingDir: /workspace/source
       script: |
@@ -56,13 +45,13 @@ spec:
         cd /
         export IBM_CLOUD_ORGANIZATION=$(inputs.params.ibm_cloud_organization)
         export IBM_CLOUD_SPACE=$(inputs.params.ibm_cloud_space)
-        export IBM_CLOUD_API_KEY=$(inputs.params.ibm_cloud_api_key)
+        export IBM_CLOUD_API_KEY=$(params.IBM_CLOUD_API_KEY)
         export IBM_CLOUD_API=$(inputs.params.ibm_cloud_api)
         export DOCS_GIT_URL=$(inputs.params.docs_git_url)
         export GUIDES_GIT_URL=$(inputs.params.guides_git_url)
         export JEKYLL_DRAFT_GUIDES=true
         export TRAVIS_REPO_SLUG=$(inputs.params.app_name_prefix)
-        export PAT==$(inputs.params.github_token)
+        export PAT=$(params.GITHUB_PAT)
         ./travis/travis_ibmcloud_cf_push.sh
       securityContext:
         runAsUser: 0
