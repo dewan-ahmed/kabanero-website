@@ -53,3 +53,7 @@ spec:
       params:
       - name: app_name_prefix
         value: $(params.git-repo-name)
+      - name: ibm_cloud_api_key
+        value: $(params.IBM_CLOUD_API_KEY)
+      - name: github_token
+        value: $(params.GITHUB_PAT)
