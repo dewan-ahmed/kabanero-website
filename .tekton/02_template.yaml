@@ -30,12 +30,12 @@ spec:
 
   - apiVersion: v1
     data:
-      password: $(params.registry-key)
       username: $(params.registry-user)
+      password: $(params.registry-password)
     kind: Secret
     metadata:
       annotations:
-        tekton.dev/docker-0: us.icr.io
+        tekton.dev/docker-0: $(params.registry-url)
       name: ibm-registry-secret
     type: kubernetes.io/basic-auth
 
@@ -59,7 +59,7 @@ spec:
       type: image
       params:
       - name: url
-        value: us.icr.io/ns_dnastaci_kabanero/website-travis-$(params.git-repo-name):$(uid)
+        value: $(params.registry-url)/ns_dnastaci_kabanero/website-travis-$(params.git-repo-name):$(uid)
 
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
