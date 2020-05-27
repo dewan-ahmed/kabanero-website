@@ -18,6 +18,8 @@ spec:
     kind: Secret
     metadata:
       name: default-token-registry
+      annotations:
+        kubernetes.io/service-account.name: pipeline
     type: kubernetes.io/service-account-token
 
   - apiVersion: v1
@@ -25,7 +27,7 @@ spec:
     metadata:
       name: pipeline
     secrets:
-    - name: default-token-$(uid)
+    - name: default-token-registry
 
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
