@@ -18,7 +18,7 @@ spec:
     kind: Secret
     data:
       username: aWFtYXBpa2V5
-      password: LTNzMFBSTklXeTZJSGlQT0I1WWdmaHplVEZ3MDBBbnZZbGxBODFCYzJZeTgK
+      password: N2xaWnRnTnU3dm5hakx5aGZ2NndVMk4xelRiaDJKbXROaXpBNzJyXzFIeFoK
     metadata:
       annotations:
         tekton.dev/docker-0: us.icr.io
