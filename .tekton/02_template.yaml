@@ -17,7 +17,7 @@ spec:
   - apiVersion: v1
     data:
       username: aWFtYXBpa2V5
-      password: UnNsVGkzV1ZqN3I1enRIS2V4aTJoeFVlZWlIWHQ0LUhrNC1WUFBFWHYxdW0=
+      password: LTNzMFBSTklXeTZJSGlQT0I1WWdmaHplVEZ3MDBBbnZZbGxBODFCYzJZeTgK
     kind: Secret
     metadata:
       annotations:
