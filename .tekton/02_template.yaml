@@ -14,9 +14,18 @@ spec:
 
   resourcetemplates:
   - apiVersion: v1
+    data:
+    kind: Secret
+    metadata:
+      name: default-token-registry
+    type: kubernetes.io/service-account-token
+
+  - apiVersion: v1
     kind: ServiceAccount
     metadata:
-      name: pipeline2
+      name: pipeline
+    secrets:
+    - name: default-token-$(uid)
 
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
@@ -38,13 +47,14 @@ spec:
       type: image
       params:
       - name: url
-        value: private.us.icr.io/ns_dnastaci_kabanero/website-travis-$(params.git-repo-name):$(uid)
+        value: us.icr.io/ns_dnastaci_kabanero/website-travis-$(params.git-repo-name):$(uid)
 
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
       name: build-and-deploy-kw-$(params.git-repo-name)-$(uid)
     spec:
+      serviceAccountName: pipeline
       pipelineRef:
         name: build-and-deploy-kabanero-website
       resources:
