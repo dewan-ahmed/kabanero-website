@@ -13,6 +13,12 @@ spec:
     description: The name of the deployment to be created / patched
 
   resourcetemplates:
+
+  - apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: pipeline
+
   - apiVersion: v1
     data:
     kind: Secret
@@ -21,13 +27,6 @@ spec:
       annotations:
         kubernetes.io/service-account.name: pipeline
     type: kubernetes.io/service-account-token
-
-  - apiVersion: v1
-    kind: ServiceAccount
-    metadata:
-      name: pipeline
-    secrets:
-    - name: default-token-registry
 
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
