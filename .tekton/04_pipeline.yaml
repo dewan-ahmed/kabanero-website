@@ -47,13 +47,9 @@ spec:
         resource: git-repo
       - name: image
         resource: target-image
-        from:
-          - build-image
     params:
     - name: script_to_run
       value: "./scripts/build_jekyll_maven.sh"
-    runAfter:
-    - build-image
   - name: publish-cf
     taskRef:
       name: publish-cf
@@ -63,8 +59,6 @@ spec:
         resource: git-repo
       - name: image
         resource: target-image
-        from:
-          - build-image
     params:
     - name: ibm_cloud_organization
       value: $(params.ibm_cloud_organization)
