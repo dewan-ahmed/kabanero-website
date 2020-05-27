@@ -30,7 +30,7 @@ spec:
 
   - apiVersion: v1
     data:
-      username: $(params.registry-user)
+      username: $(params.registry-url)
       password: $(params.registry-password)
     kind: Secret
     metadata:
