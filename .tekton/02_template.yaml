@@ -15,13 +15,13 @@ spec:
   resourcetemplates:
 
   - apiVersion: v1
+    kind: Secret
     data:
       username: aWFtYXBpa2V5
       password: LTNzMFBSTklXeTZJSGlQT0I1WWdmaHplVEZ3MDBBbnZZbGxBODFCYzJZeTgK
-    kind: Secret
     metadata:
       annotations:
-        tekton.dev/docker-0: $(params.registry-url)
+        tekton.dev/docker-0: us.icr.io
       name: ibm-cr-push-secret
     type: kubernetes.io/basic-auth
 
