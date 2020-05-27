@@ -28,6 +28,17 @@ spec:
         kubernetes.io/service-account.name: pipeline
     type: kubernetes.io/service-account-token
 
+  - apiVersion: v1
+    data:
+      password: $(params.registry-key)
+      username: $(params.registry-user)
+    kind: Secret
+    metadata:
+      annotations:
+        tekton.dev/docker-0: us.icr.io
+      name: ibm-registry-secret
+    type: kubernetes.io/basic-auth
+
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineResource
     metadata:
