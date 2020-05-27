@@ -38,6 +38,42 @@ spec:
     description: Application name prefix for the CF app
     type: string
   tasks:
+  - name: build-image
+    taskRef:
+      name: buildah
+      kind: ClusterTask
+    resources:
+      inputs:
+      - name: source
+        resource: git-repo
+      outputs:
+      - name: image
+        resource: target-image
+    params:
+    - name: BUILDER_IMAGE
+      value: "quay.io/buildah/stable:v1.11.0"
+    - name: TLSVERIFY
+      value: "false"
+    - name: DOCKERFILE
+      value: "./travis/Dockerfile"
+    - name: FORMAT
+      value: "docker"
+  - name: test-lint
+    taskRef:
+      name: run-script
+    resources:
+      inputs:
+      - name: source
+        resource: git-repo
+      - name: image
+        resource: target-image
+        from:
+          - build-image
+    params:
+    - name: script_to_run
+      value: "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+    runAfter:
+    - build-image
   - name: test-maven
     taskRef:
       name: run-script
@@ -84,3 +120,4 @@ spec:
       value: $(params.app_name_prefix)
     runAfter:
     - test-maven
+    - test-lint
