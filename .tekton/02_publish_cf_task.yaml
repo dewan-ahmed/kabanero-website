@@ -52,6 +52,7 @@ spec:
         export JEKYLL_DRAFT_GUIDES=true
         export TRAVIS_REPO_SLUG=$(inputs.params.app_name_prefix)
         export PAT=$(inputs.params.github_token)
+        ibmcloud cf install -f
         ./travis/travis_ibmcloud_cf_push.sh
       securityContext:
         runAsUser: 0
