@@ -13,7 +13,7 @@ spec:
     description: Organization in IBM Cloud account
     type: string
   - name: ibm_cloud_space
-    description: Space inside organization in IBM Cloud account
+    description: Space inside the organization in IBM Cloud account
     type: string
     default: "dev"
   - name: ibm_cloud_api
