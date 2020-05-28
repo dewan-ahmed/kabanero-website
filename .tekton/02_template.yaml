@@ -11,7 +11,11 @@ spec:
     default: master
   - name: git-repo-name
     description: The name of the deployment to be created / patched
-  - name: registry_url
+  - name: registry-url
+    description: The name of the deployment to be created / patched
+  - name: registry-user
+    description: The name of the deployment to be created / patched
+  - name: registry-password
     description: The name of the deployment to be created / patched
   - name: registry-pull-secret
     description: The name of the deployment to be created / patched
@@ -33,7 +37,7 @@ spec:
       password: $(params.registry-password)
     metadata:
       annotations:
-        tekton.dev/docker-0: $(params.registry_url)
+        tekton.dev/docker-0: $(params.registry-url)
       name: cr-push-secret
     type: kubernetes.io/basic-auth
 
