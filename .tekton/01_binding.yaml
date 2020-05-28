@@ -11,4 +11,8 @@ spec:
   - name: git-revision
     value: $(body.head_commit.id)
   - name: repository-url
-    value: us.icr.ioooooo
+    value: 
+  - name: repository-user
+    value: 
+  - name: repository-password
+    value:     
