@@ -11,6 +11,8 @@ spec:
     default: master
   - name: git-repo-name
     description: The name of the deployment to be created / patched
+  - name: registry_url
+    description: The name of the deployment to be created / patched
 
   resourcetemplates:
 
