@@ -10,8 +10,8 @@ spec:
     value: $(body.repository.name)
   - name: git-revision
     value: $(body.head_commit.id)
-  - name: registry-url
-    value:
+  - name: registry_url
+    value: aa
   - name: registry-user
     value: 
   - name: registry-password
