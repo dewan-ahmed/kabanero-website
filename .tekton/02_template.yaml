@@ -29,7 +29,7 @@ spec:
       password: $(params.registry-password)
     metadata:
       annotations:
-        tekton.dev/docker-0: $(params.registry-url)
+        tekton.dev/docker-0: $(params.registry_url)
       name: cr-push-secret
     type: kubernetes.io/basic-auth
 
