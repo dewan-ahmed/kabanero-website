@@ -11,10 +11,10 @@ spec:
   - name: git-revision
     value: $(body.head_commit.id)
   - name: registry-url
-    value: 
+    value:
   - name: registry-user
     value: 
   - name: registry-password
     value:
   - name: registry-pull-secret
-    value:
+    value: aaa
