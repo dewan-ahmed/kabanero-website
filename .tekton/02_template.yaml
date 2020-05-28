@@ -12,7 +12,7 @@ spec:
   - name: git-repo-name
     description: The name of the deployment to be created / patched
   - name: registry-url
-    description: The name of the deployment to be created / patched
+    description: URL of the container registry, such as docker.io or us.icr.io
   - name: registry-user
     description: The name of the deployment to be created / patched
   - name: registry-password
