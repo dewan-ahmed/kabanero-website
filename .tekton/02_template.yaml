@@ -11,12 +11,14 @@ spec:
     default: master
   - name: git-repo-name
     description: The name of the deployment to be created / patched
+  - name: registry-url
+    description: The name of the deployment to be created / patched
 
   resourcetemplates:
 
   - apiVersion: v1
     data:
-      .dockerconfigjson: $(param.registry-pull-secret)
+      .dockerconfigjson: eyJhdXRocyI6eyJ1cy5pY3IuaW8iOnsidXNlcm5hbWUiOiJpYW1hcGlrZXkiLCJwYXNzd29yZCI6IjMxd3J0d25NeEUwYXBHZEx5Xy1kd3NnZWstZlNUWEd0bUloZXFmSzhocndVIiwiZW1haWwiOiJpYW1hcGlrZXkiLCJhdXRoIjoiYVdGdFlYQnBhMlY1T2pNeGQzSjBkMjVOZUVVd1lYQkhaRXg1WHkxa2QzTm5aV3N0WmxOVVdFZDBiVWxvWlhGbVN6aG9jbmRWIn19fQ==
     kind: Secret
     metadata:
       name: cr-pull-secret
