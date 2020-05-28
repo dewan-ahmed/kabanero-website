@@ -16,7 +16,7 @@ spec:
 
   - apiVersion: v1
     data:
-      .dockerconfigjson: eyJhdXRocyI6eyJ1cy5pY3IuaW8iOnsidXNlcm5hbWUiOiJpYW1hcGlrZXkiLCJwYXNzd29yZCI6IjMxd3J0d25NeEUwYXBHZEx5Xy1kd3NnZWstZlNUWEd0bUloZXFmSzhocndVIiwiZW1haWwiOiJpYW1hcGlrZXkiLCJhdXRoIjoiYVdGdFlYQnBhMlY1T2pNeGQzSjBkMjVOZUVVd1lYQkhaRXg1WHkxa2QzTm5aV3N0WmxOVVdFZDBiVWxvWlhGbVN6aG9jbmRWIn19fQ==
+      .dockerconfigjson: $(param.registry-pull-secret)
     kind: Secret
     metadata:
       name: cr-pull-secret
