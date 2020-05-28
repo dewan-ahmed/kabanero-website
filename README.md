@@ -1,4 +1,4 @@
-![](src/main/content/img/Kabanero_Logo_Hero.png)
+![](src/main/content/img/Kabanero_Logo_Hero.png) a change
 
 [![Build Status](https://travis-ci.org/kabanero-io/kabanero-website.svg?branch=master)](https://travis-ci.org/kabanero-io/kabanero-website)
 
