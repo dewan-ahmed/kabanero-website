@@ -15,13 +15,24 @@ spec:
   resourcetemplates:
 
   - apiVersion: v1
+    data:
+      .dockerconfigjson: eyJhdXRocyI6eyJ1cy5pY3IuaW8iOnsidXNlcm5hbWUiOiJpYW1hcGlrZXkiLCJwYXNzd29yZCI6IjMxd3J0d25NeEUwYXBHZEx5Xy1kd3NnZWstZlNUWEd0bUloZXFmSzhocndVIiwiZW1haWwiOiJpYW1hcGlrZXkiLCJhdXRoIjoiYVdGdFlYQnBhMlY1T2pNeGQzSjBkMjVOZUVVd1lYQkhaRXg1WHkxa2QzTm5aV3N0WmxOVVdFZDBiVWxvWlhGbVN6aG9jbmRWIn19fQ==
+    kind: Secret
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","data":{".dockerconfigjson":"eyJhdXRocyI6eyJ1cy5pY3IuaW8iOnsidXNlcm5hbWUiOiJpYW1hcGlrZXkiLCJwYXNzd29yZCI6IjMxd3J0d25NeEUwYXBHZEx5Xy1kd3NnZWstZlNUWEd0bUloZXFmSzhocndVIiwiZW1haWwiOiJpYW1hcGlrZXkiLCJhdXRoIjoiYVdGdFlYQnBhMlY1T2pNeGQzSjBkMjVOZUVVd1lYQkhaRXg1WHkxa2QzTm5aV3N0WmxOVVdFZDBiVWxvWlhGbVN6aG9jbmRWIn19fQ=="},"kind":"Secret","metadata":{"annotations":{},"creationTimestamp":null,"name":"default-us-icr-io","namespace":"default"},"type":"kubernetes.io/dockerconfigjson"}
+      name: default-us-icr-io
+    type: kubernetes.io/dockerconfigjson
+
+  - apiVersion: v1
     kind: Secret
     data:
       username: aWFtYXBpa2V5
       password: N2xaWnRnTnU3dm5hakx5aGZ2NndVMk4xelRiaDJKbXROaXpBNzJyXzFIeFoK
     metadata:
       annotations:
-        tekton.dev/docker-0: us.icr.io
+        tekton.dev/docker-0: $(params.registry-url)
       name: ibm-cr-push-secret
     type: kubernetes.io/basic-auth
 
@@ -32,7 +43,7 @@ spec:
     secrets:
     - name: ibm-cr-push-secret
     imagePullSecrets:
-    - name: ibm-cr-push-secret
+    - name: default-us-icr-io
 
   - apiVersion: v1
     kind: Secret
