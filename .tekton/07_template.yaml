@@ -14,7 +14,7 @@ spec:
   - name: registry-url
     description: URL of the container registry, such as docker.io or us.icr.io
   - name: registry-user
-    description: The name of the deployment to be created / patched
+    description: IBM account base64 encoded
   - name: registry-password
     description: The IBM Cloud API for your account
   - name: registry-pull-secret
