@@ -10,7 +10,7 @@ spec:
     description: The git revision
     default: master
   - name: git-repo-name
-    description: The name of the deployment to be created / patched
+    description: The git repo name
   - name: registry-url
     description: URL of the container registry, such as docker.io or us.icr.io
   - name: registry-user
