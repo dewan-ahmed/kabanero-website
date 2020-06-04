@@ -12,7 +12,7 @@ spec:
   - name: git-repo-name
     description: The git repo name
   - name: registry-url
-    description: URL of the container registry, such as index.docker.io or us.icr.io
+    description: URL of the container registry, such as docker.io or us.icr.io
   - name: registry-user
     description: IBM account base64 encoded
   - name: registry-password
