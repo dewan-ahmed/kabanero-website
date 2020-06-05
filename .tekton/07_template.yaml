@@ -78,7 +78,7 @@ spec:
       type: image
       params:
       - name: url
-        value: $(params.registry-url)/ns_dnastaci_kabanero/website-travis-$(params.git-repo-name):$(uid)
+        value: $(params.registry-url)/dewan-cr/website-travis-$(params.git-repo-name):$(uid)
 
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
