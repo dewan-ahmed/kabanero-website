@@ -35,7 +35,7 @@ spec:
     description: K8s secret name for Git Personal Access Token
     type: string
   - name: app_name_prefix
-    description: Application name prefix for the CF app
+    description: Application name prefix for the CF app - test01
     type: string
   tasks:
   - name: build-image
