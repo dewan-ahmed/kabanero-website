@@ -51,7 +51,7 @@ spec:
         resource: target-image
     params:
     - name: BUILDER_IMAGE
-      value: "quay.io/buildah/stable:v1.11.0"
+      value: "quay.io/buildah/stable:v1.14.8"
     - name: TLSVERIFY
       value: "false"
     - name: DOCKERFILE
