@@ -1,0 +1,32 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: build-and-deploy-kw-pipeline
+spec:
+  serviceAccountName: pipeline
+  pipelineRef:
+    name: build-and-deploy-kabanero-website
+  resources:
+    - name: git-repo
+      resourceRef:
+        name: kabanero-website-repo
+    - name: target-image
+      resourceRef:
+        name: kabanero-website-image
+  params:
+    - name: app_name_prefix
+      value: production
+    - name: ibm_cloud_organization
+      value: dewan.ahmed@ibm.com
+    - name: ibm_cloud_space
+      value: dev
+    - name: ibm_cloud_api
+      value: https://cloud.ibm.com
+    - name: ibm_cloud_api_key
+      value: UIi7JMFsYVOrmONMdI5bjex39NOLoF8QH6JHUn0e4Hfi
+    - name: docs_git_url
+      value: https://github.com/kabanero-io/docs.git
+    - name: guides_git_url
+      value: https://github.com/nastacio/guides.git
+    - name: github_token
+      value: 589feaf11602ab0462b410d8bc199725d68f1d1a
