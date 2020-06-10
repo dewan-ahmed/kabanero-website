@@ -99,7 +99,7 @@ spec:
       - name: app_name_prefix
         value: $(params.git-repo-name)
       - name: ibm_cloud_organization
-        value: dnastaci@us.ibm.com
+        value: dewan.ishtiaque@hotmail.com
       - name: ibm_cloud_space
         value: dev
       - name: ibm_cloud_api
